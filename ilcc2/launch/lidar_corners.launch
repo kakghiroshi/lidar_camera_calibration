@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="ilcc2" type="get_lidar_corners" name="get_lidar_corners" output="screen">
+
+    <param name="bag_path_prefix"  value= "/home/zy/catkin_ws/src/lidar_camera_calibration/bag/fisheye-" />
+    <param name="bag_num"  value= "5" />
+
+    <param name="lidar_topic"  value= "/velodyne_points" />
+
+
+    <param name="camera_name"  value= "fisheye" />
+    <param name="yaml_path"  value= "fisheye.yaml" />
+
+
+  </node>
+
+
+</launch>
+
