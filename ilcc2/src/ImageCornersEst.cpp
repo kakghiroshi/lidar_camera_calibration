@@ -62,8 +62,7 @@ bool ImageCornersEst::getRectifyParam(std::string cam_yaml, bool stereo)
 
 void ImageCornersEst::undistort_image(cv::Mat image, cv::Mat &rectify_image)
 {
-  //cv::fisheye::undistortImage(image, rectify_image, camK, distort_param, camK);//code added by gh
-  cv::undistort(image, rectify_image, camK, distort_param, camK);
+  cv::fisheye::undistortImage(image, rectify_image, camK, distort_param, camK);//code added by gh
 }
 
 void ImageCornersEst::undistort_stereo_image(cv::Mat image, cv::Mat &rectify_image)
@@ -74,10 +73,8 @@ void ImageCornersEst::undistort_stereo_image(cv::Mat image, cv::Mat &rectify_ima
                     R1,R2,P1,P2,Q,cv::CALIB_ZERO_DISPARITY,0,
                     cv::Size(m_image_size.width/downsize,m_image_size.height/downsize));
   cv::Mat M1l,M2l;      // can be saved to save time
-  cv::initUndistortRectifyMap(camK,distort_param,R1,P1.rowRange(0,3).colRange(0,3),
-                              cv::Size(m_image_size.width/downsize,m_image_size.height/downsize),CV_32F,M1l,M2l);
-  //cv::fisheye::initUndistortRectifyMap(camK,distort_param,R1,P1.rowRange(0,3).colRange(0,3),
-                              //cv::Size(m_image_size.width/downsize,m_image_size.height/downsize),CV_32F,M1l,M2l);//code added by gh
+  cv::fisheye::initUndistortRectifyMap(camK,distort_param,R1,P1.rowRange(0,3).colRange(0,3),
+                              cv::Size(m_image_size.width/downsize,m_image_size.height/downsize),CV_32F,M1l,M2l);//code added by gh
 
   cv::remap(image,rectify_image,M1l,M2l,cv::INTER_LINEAR);
 }
