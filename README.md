@@ -1,5 +1,6 @@
 # lidar_camera_calibration
-An algorithm used to calib extrinsic parameter between fisheye camera and VLP-16
+An algorithm used to calib extrinsic parameter between fisheye camera and VLP-16.
+
 This repo is modified from https://github.com/icameling/lidar_camera_calibration.
 
 # USAGE:
@@ -61,3 +62,10 @@ and then run:
 rosbag play -l bagname.bag
 ```
 using -l can loop playback.
+
+
+
+## Any question please ask in issue
+
+some projection examples:![205900195-9998dca6-cd6b-4d48-8544-9d2844ca2fb7](https://user-images.githubusercontent.com/77578976/206113050-388be731-ba8c-4576-816c-100308afde46.png)
+![205901002-d7c19999-4d55-498e-81af-d89613b83fe9](https://user-images.githubusercontent.com/77578976/206113077-038ccbb5-5cfc-44eb-a2df-171717bda297.png)
