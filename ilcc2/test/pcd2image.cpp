@@ -32,12 +32,11 @@ using namespace message_filters;
 ImageCornersEst::Ptr image_corners_est(new ImageCornersEst);
 
 double distance_valid;
-//如果想要点云投影到原图上，需要将rectifyImage全部替换成image，并删除processData函数的前两行。
+
 void processData(cv::Mat image, pcl::PointCloud<pcl::PointXYZI>::Ptr cloud){
 
   cv::Mat rectifyImage;
-  cv::undistort(image, rectifyImage, image_corners_est->camK, image_corners_est->distort_param, image_corners_est->camK);
-  //cv::fisheye::undistortImage(image, rectifyImage, image_corners_est->camK, image_corners_est->distort_param, image_corners_est->camK);//code added by gh
+  cv::fisheye::undistortImage(image, rectifyImage, image_corners_est->camK, image_corners_est->distort_param, image_corners_est->camK);//code added by gh
 
   pcl::PointXYZI ptmp;
 
