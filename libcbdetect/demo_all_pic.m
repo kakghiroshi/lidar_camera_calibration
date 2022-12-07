@@ -3,11 +3,11 @@ disp('================================');
 
 addpath('matching');
 
-imagepath = 'E:\process_data\';
+imagepath = 'E:\process_data\';%%Modify according to your path
 image_prefix = 'car_left';
 image_extention = '.jpg';
 
-%%% [image_start_num, image_end_num] °üÀ¨Á½¶Ë
+%%% [image_start_num, image_end_num] Â°Ã¼Ã€Â¨ÃÂ½Â¶Ã‹
 
 image_start_num = 1;
 image_end_num = 6;  
